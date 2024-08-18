@@ -54,8 +54,8 @@ The front-end provides an intuitive interface for both administrators and users:
 
 1. **Clone the Repository**:
     ```bash
-    git clone https://github.com/yourusername/LicenseChain.git
-    cd LicenseChain
+    git clone https://github.com/vigneshvicky2/LicenseChain-Blockchain-Based-Lincense-Protection.git
+    cd LicenseChain-Blockchain-Based-Lincense-Protection
     ```
 
 2. **Install Dependencies**:
