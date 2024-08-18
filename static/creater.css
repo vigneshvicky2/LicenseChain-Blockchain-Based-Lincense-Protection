@@ -1,0 +1,180 @@
+/* General styles for both portals */
+body {
+    font-family: 'Poppins', sans-serif;
+    margin: 0;
+    padding: 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    background: linear-gradient(135deg, #c3dafe, #e0e7ff, #f0f4f8); /* Adjusted gradient for smoother transition */
+}
+
+.container {
+    width: 450px; /* Original box width */
+    background: rgba(255, 255, 255, 0.2); /* Semi-transparent white */
+    backdrop-filter: blur(15px); /* Frosted glass blur */
+    padding: 40px;
+    border-radius: 20px;
+    border: 1px solid rgba(255, 255, 255, 0.4); /* Light border for glass effect */
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.15);
+    transition: transform 0.5s ease, box-shadow 0.5s ease;
+    position: relative;
+    animation: fadeInUp 0.8s ease forwards;
+    opacity: 0;
+    max-height: 90vh; /* Prevent container from overflowing the screen */
+    overflow-y: auto; /* Allow scrolling if content exceeds container height */
+    margin-top: 50px; /* Added margin-top for spacing */
+}
+
+/* Hide scrollbar but keep scroll functionality */
+.container::-webkit-scrollbar {
+    width: 0; /* Hide the scrollbar on WebKit browsers */
+    height: 0;
+}
+
+.container {
+    -ms-overflow-style: none;  /* Hide scrollbar for Internet Explorer and Edge */
+    scrollbar-width: none;     /* Hide scrollbar for Firefox */
+}
+
+@keyframes fadeInUp {
+    0% {
+        opacity: 0;
+        transform: translateY(50px);
+    }
+    100% {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+.container:hover {
+    transform: translateY(-10px);
+    box-shadow: 0 12px 50px rgba(0, 0, 0, 0.2);
+}
+
+h2, h3 {
+    font-size: 24px;
+    color: #333;
+    text-align: center;
+    margin-bottom: 20px;
+    animation: fadeIn 1.2s ease;
+}
+
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+    }
+    to {
+        opacity: 1;
+    }
+}
+
+/* Form styling */
+.form-group {
+    margin-bottom: 20px;
+}
+
+label {
+    display: block;
+    font-weight: 600;
+    margin-bottom: 8px;
+    color: #6366f1;
+    animation: slideIn 0.6s ease;
+}
+
+@keyframes slideIn {
+    from {
+        opacity: 0;
+        transform: translateX(-10px);
+    }
+    to {
+        opacity: 1;
+        transform: translateX(0);
+    }
+}
+
+input[type="text"], textarea {
+    width: 100%;
+    padding: 12px;
+    border: 1px solid #ddd;
+    border-radius: 10px;
+    background-color: rgba(255, 255, 255, 0.3); /* Semi-transparent background for input fields */
+    font-size: 16px;
+    transition: border 0.3s, box-shadow 0.3s, transform 0.3s; /* Added transform to transition */
+    box-shadow: inset 0 2px 5px rgba(0, 0, 0, 0.05);
+}
+
+input[type="text"]:focus, textarea:focus {
+    border: 1px solid #6366f1;
+    outline: none;
+    box-shadow: 0 0 10px rgba(99, 102, 241, 0.2);
+    background-color: rgba(238, 242, 255, 0.6);
+    transform: scale(1.02); /* Zoom-in effect */
+    transition: all 0.4s ease;
+}
+
+/* Button styling with animations */
+button {
+    width: 100%;
+    padding: 12px;
+    background: linear-gradient(135deg, #4f46e5, #6366f1);
+    border: none;
+    border-radius: 10px;
+    color: white;
+    font-size: 18px;
+    font-weight: 700;
+    cursor: pointer;
+    transition: background-color 0.3s ease, transform 0.3s ease, box-shadow 0.3s ease;
+    box-shadow: 0 8px 20px rgba(99, 102, 241, 0.3);
+}
+
+button:hover {
+    background: linear-gradient(135deg, #3b82f6, #6366f1);
+    transform: translateY(-3px);
+    box-shadow: 0 12px 30px rgba(59, 130, 246, 0.4);
+}
+
+button:active {
+    transform: translateY(2px);
+}
+
+/* Message and blockchain section */
+.message {
+    margin-top: 20px;
+    color: #444;
+    font-size: 16px;
+    animation: fadeIn 1s ease;
+}
+
+.blockchain {
+    margin-top: 30px;
+    height: auto; /* Set auto height initially */
+    max-height: 50vh; /* Prevent the section from taking up too much space */
+    overflow-y: auto; /* Enable scrolling if content exceeds the area */
+    background-color: rgba(238, 242, 255, 0.6); /* Semi-transparent background for glassmorphism */
+    padding: 15px;
+    border-radius: 10px;
+    font-size: 14px;
+    border: 1px solid rgba(255, 255, 255, 0.4);
+    box-shadow: inset 0 2px 5px rgba(0, 0, 0, 0.05);
+    animation: fadeIn 1s ease;
+}
+
+/* Responsive behavior */
+@media (max-width: 768px) {
+    .container {
+        width: 90%; /* Allow smaller screens to take up more width */
+        padding: 20px;
+        margin-top: 20px; /* Reduce top margin on smaller screens */
+    }
+
+    h2, h3 {
+        font-size: 20px;
+    }
+
+    button {
+        font-size: 16px;
+    }
+}

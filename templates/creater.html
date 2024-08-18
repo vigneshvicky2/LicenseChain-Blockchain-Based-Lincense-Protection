@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Admin Portal - License Management</title>
+    <script src="../static/script.js"></script>
+    <link rel="stylesheet" href="../static/creater.css">
+
+</head>
+<body>
+    <div class="container">
+        <h2>Admin Portal - Create New Block</h2>
+        <div class="form-group">
+            <label for="license_key">License Key:</label>
+            <input type="text" id="license_key" required>
+        </div>
+        <div class="form-group">
+            <label for="software_id">Software ID:</label>
+            <input type="text" id="software_id" required>
+        </div>
+        <div class="form-group">
+            <label for="user_id">User ID:</label>
+            <input type="text" id="user_id" required>
+        </div>
+        <div class="form-group">
+            <label for="metadata">Metadata (optional):</label>
+            <textarea id="metadata"></textarea>
+        </div>
+        <button onclick="createBlock()">Create Block</button>
+        <div class="message" id="message"></div>
+        
+        <h3>Blockchain</h3>
+        <div class="blockchain" id="blockchain"></div>
+        <button onclick="getBlockchain()">Get Blockchain</button>
+    </div>
+
+</body>
+</html>
