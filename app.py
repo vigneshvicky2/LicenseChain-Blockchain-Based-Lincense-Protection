@@ -1,5 +1,5 @@
 from flask import Flask, render_template, jsonify,request
-import longchain as lg
+import licensechain as lg
 
 app = Flask(__name__)
 
